@@ -1,8 +1,9 @@
 import React from 'react'
+import Clock from './Clock'
 
 const Body = () => (
   <div>
-    Body
+    <Clock />
   </div>
 )
 

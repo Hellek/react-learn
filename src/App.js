@@ -1,15 +1,15 @@
 import Body from './components/Body'
 
 const Header = props => (
-  <div>Header</div>
+  <header>Header</header>
 )
 
 const Footer = props => (
-  <div>Footer</div>
+  <footer>Footer</footer>
 )
 
 const App = () => (
-  <div>
+  <div id="app">
     <Header />
     <Body />
     <Footer />

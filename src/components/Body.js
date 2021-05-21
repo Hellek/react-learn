@@ -4,11 +4,11 @@ import Users from './Users'
 import Form from './Form'
 
 const Body = () => (
-  <div>
+  <main>
     <Clock />
     <Users />
     <Form />
-  </div>
+  </main>
 )
 
 export default Body

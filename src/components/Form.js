@@ -16,7 +16,9 @@ class Form extends React.Component {
 
 	render() {
 		return (
-			<div style={{ margin: '20px 0' }}>
+			<fieldset>
+				<legend>Форма</legend>
+
 				<div>Ваше имя:  {this.state.firstName || 'не указано'}</div>
 				<input
 					name="firstName"
@@ -43,7 +45,7 @@ class Form extends React.Component {
 					<option value="coconut">Кокос</option>
 					<option value="mango">Манго</option>
 				</select>
-			</div>
+			</fieldset>
 		)
 	}
 }

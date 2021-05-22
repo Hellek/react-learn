@@ -49,14 +49,16 @@ class Users extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<fieldset>
+				<legend>Список пользователей</legend>
+
 				<button
 					onClick={this.setUsers}
 					disabled={this.usersLoading}
 				>Get users</button>
 
 				<UsersList users={this.state.users}/>
-			</div>
+			</fieldset>
 		)
 	}
 }

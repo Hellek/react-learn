@@ -29,3 +29,7 @@ header, main, footer {
 code {
   font-family: monospace;
 }
+
+fieldset {
+  margin-bottom: 10px;
+}

@@ -24,7 +24,12 @@ class Clock extends React.Component {
   }
 
   render() {
-    return <div>{this.state.time.toLocaleTimeString()}</div>
+    return (
+      <fieldset>
+        <legend>Текущее время</legend>
+        {this.state.time.toLocaleTimeString()}
+      </fieldset>
+    )
   }
 }
 

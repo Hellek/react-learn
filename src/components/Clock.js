@@ -1,36 +1,35 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { time: new Date() }
-  }
+function Clock() {
+  const [time, setTime] = useState(new Date())
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    )
-  }
+  useEffect(() => {
+    const timerID = setTimeout(() => {
+      setTime(new Date())
+    }, 1000)
 
-  componentWillUnmount() {
-    clearInterval(this.timerID)
-  }
+    return () => clearTimeout(timerID)
+  })
 
-  tick() {
-    this.setState({
-      time: new Date()
-    })
-  }
-
-  render() {
-    return (
-      <fieldset>
-        <legend>Текущее время</legend>
-        {this.state.time.toLocaleTimeString()}
-      </fieldset>
-    )
-  }
+  return (
+    <div style={{ marginTop: '10px' }}>
+      {time.toLocaleTimeString()}
+    </div>
+  )
 }
 
-export default Clock
+function ClockContainer() {
+  const [showClock, setShowClock] = useState(false)
+
+  const ShowButton = () => <button onClick={() => { setShowClock(!showClock) }}>{showClock ? 'Скрыть' : 'Показать'} часы</button>
+
+  return (
+    <fieldset>
+      <legend>Текущее время</legend>
+      <ShowButton />
+      {showClock && <Clock />}
+    </fieldset>
+  )
+}
+
+export default ClockContainer

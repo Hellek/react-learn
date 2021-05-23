@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 function handleUserProp(prop) {
 	return typeof prop === 'object' ? JSON.stringify(prop) : prop
@@ -26,41 +26,36 @@ function UsersList(props) {
 	)
 }
 
-class Users extends React.Component {
-	constructor(props) {
-		super(props)
+function Users() {
+	const [users, setUsers] = useState([])
+	const [usersLoading, setUsersLoading] = useState(false)
 
-		this.state = {
-			users: [],
-			usersLoading: false,
-		}
+	const fetchUsers = async () => {
+		return await (await fetch('http://jsonplaceholder.typicode.com/users')).json()
 	}
 
-	getUsers = async () => {
-		const res = await fetch('http://jsonplaceholder.typicode.com/users')
-		return await res.json()
+	const setFetchedUsers = async () => {
+		setUsersLoading(true)
+		setUsers(await fetchUsers())
+		setUsersLoading(false)
 	}
 
-	setUsers = async () => {
-		this.setState({ usersLoading: true })
-		const users = await this.getUsers()
-		this.setState({ users, usersLoading: false })
-	}
+	return (
+		<fieldset>
+			<legend>Список пользователей</legend>
 
-	render() {
-		return (
-			<fieldset>
-				<legend>Список пользователей</legend>
-
+			{(!users.length && !usersLoading) &&
 				<button
-					onClick={this.setUsers}
-					disabled={this.usersLoading}
+					onClick={setFetchedUsers}
+					disabled={usersLoading}
 				>Get users</button>
+			}
 
-				<UsersList users={this.state.users}/>
-			</fieldset>
-		)
-	}
+			{usersLoading && <div>Загрузка...</div>}
+
+			<UsersList users={users}/>
+		</fieldset>
+	)
 }
 
 export default Users

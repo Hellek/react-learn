@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Block1() {
 	return (
 		<div>Block1, yo!</div>

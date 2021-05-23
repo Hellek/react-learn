@@ -1,28 +1,41 @@
-html, body, #root, #app {
+:root {
+  --black-primary: #20232a;
+  --black-secondary: #282c34;
+  --white-primary: #fff;
+  --blue-primary: #61dafb;
+}
+
+html, body, #root {
   height: 100%;
 }
 
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #282c34;
-  color: white;
+  background-color: var(--black-secondary);
+  color: var(--white-primary);
 }
 
-#app {
+#root {
   display: flex;
   flex-direction: column;
 }
 
 header, footer {
-  background-color: #20232a;
+  background-color: var(--black-primary);
 }
 
 main {
   flex: 1;
 }
 
-header, main, footer {
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+header a, main, footer {
   padding: 16px;
 }
 
@@ -32,4 +45,24 @@ code {
 
 fieldset {
   margin-bottom: 10px;
+}
+
+a, a {
+  display: inline-block;
+  color: var(--white-primary);
+  text-decoration: none;
+
+  &.active {
+    color: var(--blue-primary);
+  }
+
+  &:hover {
+    background-color: var(--blue-primary);
+    color: var(--black-primary);
+  }
+}
+
+// Helpers
+.display-flex {
+  display: flex;
 }

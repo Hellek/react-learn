@@ -42,7 +42,7 @@ function Users() {
 
 	return (
 		<fieldset>
-			<legend>Список пользователей</legend>
+			<legend>Users async fetch</legend>
 
 			{(!users.length && !usersLoading) &&
 				<button

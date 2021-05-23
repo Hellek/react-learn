@@ -1,19 +1,26 @@
-import Body from './components/Body'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Results from './pages/Results'
+import Contacts from './pages/Contacts'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
-const Header = props => (
-  <header>Header</header>
-)
+function App() {
+  return (
+    <Router>
+      <Header />
 
-const Footer = props => (
-  <footer>Footer</footer>
-)
+      <main>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/results' component={Results} />
+          <Route exact path='/contacts' component={Contacts} />
+        </Switch>
+      </main>
 
-const App = () => (
-  <div id="app">
-    <Header />
-    <Body />
-    <Footer />
-  </div>
-)
+      <Footer />
+    </Router>
+  )
+}
 
 export default App

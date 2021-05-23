@@ -21,11 +21,11 @@ function Clock() {
 function ClockContainer() {
   const [showClock, setShowClock] = useState(false)
 
-  const ShowButton = () => <button onClick={() => { setShowClock(!showClock) }}>{showClock ? 'Скрыть' : 'Показать'} часы</button>
+  const ShowButton = () => <button onClick={() => { setShowClock(!showClock) }}>{showClock ? 'Hide' : 'Show'} clock</button>
 
   return (
     <fieldset>
-      <legend>Текущее время</legend>
+      <legend>Current time</legend>
       <ShowButton />
       {showClock && <Clock />}
     </fieldset>

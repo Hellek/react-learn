@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 const scaleNames = {
-	c: 'цельсия',
-	f: 'фаренгейта',
+	c: 'celsius',
+	f: 'fahrenheit',
 }
 
 function toCelsius(fahrenheit) {
@@ -24,8 +24,8 @@ function tryConvert(temperature, convert) {
 }
 
 function BoilingVerdict(props) {
-	if (props.celsius >= 100) return <div>Вода закипит</div>
-	return <div>Вода не закипит</div>
+	if (props.celsius >= 100) return <div>hubble-bubble 💦</div>
+	return <div>will not boil</div>
 }
 
 function TemperatureInput(props) {
@@ -61,7 +61,7 @@ function Calculator(props) {
 
 	return (
 		<fieldset>
-			<legend>Введите градусы по шкале</legend>
+			<legend>Enter degrees on the scale</legend>
 
 			<TemperatureInput
 				scale="c"

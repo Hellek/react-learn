@@ -40,7 +40,7 @@ function Form() {
 				onChange={e => {setFruit(e.target.value)}}
 			>
 				{Object.keys(fruits).map(name => {
-					return <option value={name}>{fruits[name].icon} { capitalize(name)}</option>
+					return <option value={name} key={name}>{fruits[name].icon} { capitalize(name)}</option>
 				})}
 			</select>
 		</fieldset>

@@ -8,9 +8,9 @@ const Header = () => (
     >Home</NavLink>
 
     <NavLink
-      to={'/results'}
+      to={'/common'}
       exact
-    >Results</NavLink>
+    >Common</NavLink>
 
     <NavLink
       to={'/contacts'}

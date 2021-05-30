@@ -1,6 +1,6 @@
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Results from './pages/Results'
+import Common from './pages/Common'
 import Contacts from './pages/Contacts'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -13,7 +13,7 @@ function App() {
       <main>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/results' component={Results} />
+          <Route exact path='/common' component={Common} />
           <Route exact path='/contacts' component={Contacts} />
         </Switch>
       </main>

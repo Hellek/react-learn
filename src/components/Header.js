@@ -13,6 +13,11 @@ const Header = () => (
     >Common</NavLink>
 
     <NavLink
+      to={'/mobx'}
+      exact
+    >Mobx</NavLink>
+
+    <NavLink
       to={'/contacts'}
       exact
     >Contacts</NavLink>

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-function handleUserProp(prop) {
+function handleUserProp(prop: any) {
 	return typeof prop === 'object' ? JSON.stringify(prop) : prop
 }
 
-function User(props) {
+function User(props: { user: { [x: string]: any } }) {
 	return (
 		<div style={{ marginBottom: '20px' }}>{
 			Object.keys(props.user).map((propName, i) => {
@@ -16,10 +16,10 @@ function User(props) {
 	)
 }
 
-function UsersList(props) {
+function UsersList(props: { users: { id: any }[] }) {
 	return (
 		<div>{
-			props.users.map(user =>
+			props.users.map((user: { id: any }) =>
 				<User key={user.id} user={user} />
 			)
 		}</div>

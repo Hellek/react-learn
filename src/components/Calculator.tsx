@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 
 const scaleNames = {
 	c: 'celsius',
 	f: 'fahrenheit',
 }
 
-function toCelsius(fahrenheit) {
-	return (fahrenheit - 32) * 5 / 9
+function toCelsius(fahrenheit: string | number): number {
+	return (+fahrenheit - 32) * 5 / 9
 }
 
-function toFahrenheit(celsius) {
-	return (celsius * 9 / 5) + 32
+function toFahrenheit(celsius: string | number): number {
+	return (+celsius * 9 / 5) + 32
 }
 
-function tryConvert(temperature, convert) {
+function tryConvert(temperature: string, convert: typeof toCelsius | typeof toFahrenheit): string {
 	const input = parseFloat(temperature)
 	if (Number.isNaN(input)) return ''
 
@@ -23,13 +23,17 @@ function tryConvert(temperature, convert) {
 	return rounded.toString()
 }
 
-function BoilingVerdict(props) {
+function BoilingVerdict(props: { celsius: number }) {
 	if (props.celsius >= 100) return <div>hubble-bubble 💦</div>
 	return <div>will not boil</div>
 }
 
-function TemperatureInput(props) {
-	const handleChange = e => {
+function TemperatureInput(props: {
+	onTemperatureChange: (arg0: string) => void
+	scale: 'c' | 'f'
+	temperature: string | number
+}) {
+	const handleChange = (e: { target: { value: string } }) => {
 		props.onTemperatureChange(e.target.value)
 	}
 
@@ -42,16 +46,16 @@ function TemperatureInput(props) {
 	)
 }
 
-function Calculator(props) {
+function Calculator(props: any) {
 	const [temperature, setTemperature] = useState('')
 	const [scale, setScale] = useState('c')
 
-	const handleCelsiusChange = temp => {
+	const handleCelsiusChange = (temp: SetStateAction<string>) => {
 		setTemperature(temp)
 		setScale('c')
 	}
 
-	const handleFahrenheitChange = temp => {
+	const handleFahrenheitChange = (temp: SetStateAction<string>) => {
 		setTemperature(temp)
 		setScale('f')
 	}

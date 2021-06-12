@@ -19,6 +19,11 @@ const Header = (): ReactElement => (
 		>Mobx</NavLink>
 
 		<NavLink
+			to={'/achievements'}
+			exact
+		>Achievements</NavLink>
+
+		<NavLink
 			to={'/contacts'}
 			exact
 		>Contacts</NavLink>

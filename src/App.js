@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Header />
 
-      <main>
+      <main className="flex-1">
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/common' component={Common} />

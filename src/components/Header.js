@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 const Header = () => (
-  <header>
+  <header className="bg-gray-900">
     <NavLink
       to={'/'}
       exact

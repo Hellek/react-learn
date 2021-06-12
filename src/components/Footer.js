@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => (
-  <footer>
+  <footer className="bg-gray-900 flex justify-center items-center">
     <span>Made by </span>
 
     <NavLink

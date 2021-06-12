@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { SimpleCard } from '@components/achievements/SimpleCard'
+import { SimpleCard } from '@ui/SimpleCard'
 import { Course, Skill } from '@data/personal'
 
 export const CourseItem = ({ course }: { course: Course }): ReactElement => (

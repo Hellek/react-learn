@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react'
+import { ReactElement, SetStateAction, useState } from 'react'
 
 const scaleNames = {
 	c: 'celsius',
@@ -32,7 +32,7 @@ function TemperatureInput(props: {
 	onTemperatureChange: (arg0: string) => void
 	scale: 'c' | 'f'
 	temperature: string | number
-}) {
+}): ReactElement {
 	const handleChange = (e: { target: { value: string } }) => {
 		props.onTemperatureChange(e.target.value)
 	}
@@ -46,7 +46,7 @@ function TemperatureInput(props: {
 	)
 }
 
-function Calculator(props: any) {
+function Calculator(): ReactElement {
 	const [temperature, setTemperature] = useState('')
 	const [scale, setScale] = useState('c')
 

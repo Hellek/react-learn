@@ -1,16 +1,18 @@
-function Block1() {
+import { ReactElement } from 'react'
+
+function Block1(): ReactElement {
 	return (
 		<div>Block1, yo!</div>
 	)
 }
 
-function Block2() {
+function Block2(): ReactElement {
 	return (
 		<div>Block2, yo!</div>
 	)
 }
 
-function FancyBorder(props) {
+function FancyBorder(props: { firstEl: any, secondEl: any }): ReactElement {
 	return (
 		<fieldset>
 			<legend>Composition</legend>
@@ -20,7 +22,7 @@ function FancyBorder(props) {
 	)
 }
 
-function WelcomeDialog() {
+function WelcomeDialog(): ReactElement {
 	return (
 		<FancyBorder
 			firstEl={<Block1 />}

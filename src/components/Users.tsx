@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 
 function handleUserProp(prop: any) {
 	return typeof prop === 'object' ? JSON.stringify(prop) : prop
 }
 
-function User(props: { user: { [x: string]: any } }) {
+function User(props: { user: { [x: string]: any } }): ReactElement {
 	return (
 		<div style={{ marginBottom: '20px' }}>{
 			Object.keys(props.user).map((propName, i) => {
@@ -16,7 +16,7 @@ function User(props: { user: { [x: string]: any } }) {
 	)
 }
 
-function UsersList(props: { users: { id: any }[] }) {
+function UsersList(props: { users: { id: any }[] }): ReactElement {
 	return (
 		<div>{
 			props.users.map((user: { id: any }) =>
@@ -26,7 +26,7 @@ function UsersList(props: { users: { id: any }[] }) {
 	)
 }
 
-function Users() {
+function Users(): ReactElement {
 	const [users, setUsers] = useState([])
 	const [usersLoading, setUsersLoading] = useState(false)
 

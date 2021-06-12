@@ -1,32 +1,17 @@
 import { ReactElement } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { routes } from '@router/routes'
+
 const Header = (): ReactElement => (
 	<header className="bg-gray-900">
-		<NavLink
-			to={'/'}
-			exact
-		>Home</NavLink>
-
-		<NavLink
-			to={'/common'}
-			exact
-		>Common</NavLink>
-
-		<NavLink
-			to={'/mobx'}
-			exact
-		>Mobx</NavLink>
-
-		<NavLink
-			to={'/achievements'}
-			exact
-		>Achievements</NavLink>
-
-		<NavLink
-			to={'/contacts'}
-			exact
-		>Contacts</NavLink>
+		{routes.map((route, i) => (
+			<NavLink
+				key={i}
+				to={route.path}
+				exact
+			>{route.label}</NavLink>
+		))}
 	</header>
 )
 

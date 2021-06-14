@@ -21,6 +21,29 @@ fieldset {
 	@apply mb-3 border-2 border-gray-600 px-3 pb-3 pt-1;
 }
 
+select, input, textarea, button {
+	@apply px-2 py-1 border rounded-md border-blue-400;
+}
+
+select, input, textarea {
+	@apply bg-gray-800;
+}
+
+button {
+	@apply bg-blue-400;
+}
+
+button:hover {
+	@apply bg-transparent;
+}
+
+textarea:focus,
+textarea:focus,
+input:focus,
+button:focus {
+	outline: none;
+}
+
 a {
 	@apply inline-block;
 }

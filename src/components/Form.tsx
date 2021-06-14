@@ -29,21 +29,21 @@ function Form(): ReactElement {
 				name="firstName"
 				type="text"
 				value={firstName}
-				onInput={e => {setFirstName((e.target as HTMLInputElement).value)}}
+				onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setFirstName(e.target.value)}}
 			/>
 
 			<div style={{ margin: '10px 0 5px' }}>Edit text:  {text || 'unknown'}</div>
 			<textarea
 				name="text"
 				value={text}
-				onInput={e => {setText((e.target as HTMLInputElement).value)}}
+				onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {setText(e.target.value)}}
 			/>
 
 			<div style={{ margin: '8px 0 5px' }}>Choose fruit:  {fruits[fruit].icon || 'unknown'}</div>
 			<select
 				name="fruit"
 				value={fruit}
-				onChange={e => { setFruit((e.target as HTMLSelectElement).value)}}
+				onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setFruit(e.target.value)}}
 			>
 				{Object.keys(fruits).map(name => {
 					return <option value={name} key={name}>{fruits[name].icon} { capitalize(name)}</option>

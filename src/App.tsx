@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { routes } from '@router/routes'
 import Footer from '@components/Footer'

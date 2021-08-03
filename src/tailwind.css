@@ -21,8 +21,16 @@ fieldset {
 	@apply mb-3 border-2 border-gray-600 px-3 pb-3 pt-1;
 }
 
+code {
+	@apply bg-green-code-light text-green-code;
+}
+
 select, input, textarea, button {
-	@apply px-2 py-1 border rounded-md border-blue-400;
+	@apply border border-blue-400;
+}
+
+select, input, textarea, button, code {
+	@apply rounded-md px-2 py-1;
 }
 
 select, input, textarea {

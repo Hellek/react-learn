@@ -2,7 +2,12 @@ import { FC } from 'react'
 import { Provider, useSelector } from 'react-redux'
 import { createStore } from 'redux'
 
-import { initialState, ReduxAction, State } from './common'
+import { initialState, State } from './common'
+
+interface ReduxAction {
+	type: string;
+	payload?: any;
+}
 
 const counterReducer = function (state: State = initialState, action: ReduxAction) {
 	switch (action.type) {

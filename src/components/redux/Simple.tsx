@@ -2,22 +2,9 @@ import { FC } from 'react'
 import { Provider, useSelector } from 'react-redux'
 import { createStore } from 'redux'
 
-interface ReduxAction {
-	type: string;
-	payload?: any;
-}
+import { initialState, ReduxAction, State } from './common'
 
-interface State {
-	timesClicked: number
-	value: number
-}
-
-const defaultState = {
-	timesClicked: 0,
-	value: 0,
-}
-
-const counterReducer = function (state: State = defaultState, action: ReduxAction) {
+const counterReducer = function (state: State = initialState, action: ReduxAction) {
 	switch (action.type) {
 	case 'counter/increase':
 		return { value: state.value + 1, timesClicked: state.timesClicked + 1 }

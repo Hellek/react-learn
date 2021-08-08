@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import ReduxToolkit from '@components/redux/ReduxToolkit'
 import ReduxSimple from '@components/redux/Simple'
 
 export const ReduxPage: FC = () => {
@@ -7,6 +8,7 @@ export const ReduxPage: FC = () => {
 		<div className="flex">
 			<ReduxSimple />
 			<div className="mr-5" />
+			<ReduxToolkit />
 		</div>
 	)
 }

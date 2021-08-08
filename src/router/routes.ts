@@ -4,6 +4,7 @@ import Common from '@pages/Common'
 import Contacts from '@pages/Contacts'
 import Home from '@pages/Home'
 import Mobx from '@pages/Mobx'
+import Redux from '@pages/Redux'
 
 export const routes = [
 	{
@@ -30,6 +31,11 @@ export const routes = [
 		path: '/mobx',
 		component: Mobx,
 		label: 'Mobx',
+	},
+	{
+		path: '/redux',
+		component: Redux,
+		label: 'Redux',
 	},
 	{
 		path: '/contacts',

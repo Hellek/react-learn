@@ -1,36 +1,14 @@
 import { FC } from 'react'
-import { Provider, useDispatch, useSelector } from 'react-redux'
+import { Provider } from 'react-redux'
 
-import { configureStore, createSlice } from '@reduxjs/toolkit'
-import { initialState, State } from './common'
-
-const counterSlice = createSlice({
-	name: 'counter',
-	initialState,
-	reducers: {
-		increase: state => {
-			state.timesClicked += 1
-			state.value += 1
-		},
-		decrease: state => {
-			state.timesClicked += 1
-			state.value -= 1
-		},
-	},
-})
-
-const { increase, decrease } = counterSlice.actions
-
-const store = configureStore({
-	reducer: counterSlice.reducer,
-})
-
-store.subscribe(() => console.info(store.getState()))
+import { useAppDispatch,useAppSelector } from './ReduxToolkit.hooks'
+import { decrease, increase } from './ReduxToolkit.slice'
+import { store } from './ReduxToolkit.store'
 
 export const CounterComponent: FC = () => {
-	const timesClicked = useSelector((state: State) => state.timesClicked)
-	const value = useSelector((state: State) => state.value)
-	const dispatch = useDispatch()
+	const timesClicked = useAppSelector(state => state.timesClicked)
+	const value = useAppSelector(state => state.value)
+	const dispatch = useAppDispatch()
 
 	return (
 		<div>

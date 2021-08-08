@@ -3,8 +3,11 @@ import './tailwind.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { App } from './App'
 // import reportWebVitals from './reportWebVitals';
+import { themeAutoDetect } from '@components/ThemeSwitcher'
+import { App } from './App'
+
+themeAutoDetect()
 
 ReactDOM.render(
 	<React.StrictMode>

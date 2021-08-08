@@ -5,31 +5,27 @@ interface Props {
 	className?: Argument
 }
 
+export const isWindowPrefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+export const setThemeHtmlClass = (theme: 'dark' | 'light'): void => {
+	document.documentElement.classList.add(theme)
+	document.documentElement.classList.remove(theme === 'dark' ? 'light' : 'dark')
+	localStorage.setItem('theme', theme)
+}
+
+export const themeAutoDetect = (): void => {
+	const cachedTheme = localStorage.getItem('theme')
+
+	if (cachedTheme) setThemeHtmlClass(cachedTheme as 'dark' | 'light')
+	else if (isWindowPrefersDarkScheme) setThemeHtmlClass('dark')
+	else setThemeHtmlClass('light')
+}
+
+const toggleTheme = () => {
+	setThemeHtmlClass(document.documentElement.classList.contains('dark') ? 'light' : 'dark')
+}
+
 const ThemeSwitcher = ({ className }: Props): ReactElement => {
-	const checkDarkMode = () => {
-		if (
-			window.matchMedia
-			&& window.matchMedia('(prefers-color-scheme: dark)').matches
-		) return true
-		return false
-	}
-
-	const handleDarkTheme = (action: 'enable' | 'disable') => {
-		if (action === 'enable') {
-			document.documentElement.classList.add('dark')
-			return
-		}
-
-		document.documentElement.classList.remove('dark')
-	}
-
-	if (checkDarkMode()) handleDarkTheme('enable')
-	else handleDarkTheme('disable')
-
-	const switchTheme = () => {
-		handleDarkTheme(document.documentElement.classList.contains('dark') ? 'disable' : 'enable')
-	}
-
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +36,7 @@ const ThemeSwitcher = ({ className }: Props): ReactElement => {
 			stroke="currentColor"
 			className={cn('cursor-pointer', className)}
 			strokeWidth="2"
-			onClick={switchTheme}
+			onClick={toggleTheme}
 		>
 			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
 		</svg>

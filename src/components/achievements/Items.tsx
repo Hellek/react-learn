@@ -18,6 +18,6 @@ export const CourseItem = ({ course }: { course: Course }): ReactElement => (
 
 export const SkillItem = ({ skill }: { skill: Skill }): ReactElement => (
 	<SimpleCard>
-		<div>{skill.name}</div>
+		<div>{skill.name}: {skill.items.join(', ')}</div>
 	</SimpleCard>
 )

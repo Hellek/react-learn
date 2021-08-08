@@ -7,6 +7,7 @@ export interface Course {
 
 export interface Skill {
 	name: string
+	items: string[]
 }
 
 export const courses = [
@@ -27,8 +28,68 @@ export const courses = [
 export const skills = [
 	{
 		name: 'Vue',
+		items: [
+			'vue v2',
+			'vue v3',
+			'vuex',
+			'vue-router',
+		],
+	},
+	{
+		name: 'JavaScript',
+		items: [
+			'TypeScript',
+			'Promise',
+			'async/await',
+			'rest/spread operators',
+			'template literals',
+		],
+	},
+	{
+		name: 'Node.js',
+		items: [
+			'express',
+			'koa',
+			'pg',
+		],
 	},
 	{
 		name: 'React',
+		items: [
+			'redux',
+			'mobx-react-lite',
+			'react-router',
+			'@reduxjs/toolkit',
+		],
+	},
+	{
+		name: 'CSS',
+		items: [
+			'flexbox',
+			'grids',
+			'tailwind',
+			'themization',
+		],
+	},
+	{
+		name: 'GIT',
+		items: [
+			'merge',
+			'rebase',
+			'fast-forward',
+			'revert',
+			'cherry pick',
+			'reset',
+		],
+	},
+	{
+		name: 'CI/DI',
+		items: [
+			'heroku',
+			'vercel',
+			'drone.ci',
+			'github pages',
+			'gitlab',
+		],
 	},
 ]

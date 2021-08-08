@@ -6,7 +6,7 @@ html, body, #root {
 }
 
 body {
-  @apply bg-gray-800 text-white;
+  @apply bg-white dark:bg-gray-800 text-gray-800 dark:text-white;
 }
 
 #root {
@@ -15,6 +15,10 @@ body {
 
 header a, main, footer {
   @apply p-4;
+}
+
+header, footer {
+	@apply bg-gray-100 dark:bg-gray-900;
 }
 
 fieldset {
@@ -34,11 +38,11 @@ select, input, textarea, button, code {
 }
 
 select, input, textarea {
-	@apply bg-gray-800;
+	@apply bg-gray-100 dark:bg-gray-800;
 }
 
 button {
-	@apply bg-blue-400;
+	@apply text-white bg-blue-400;
 }
 
 button:hover {
@@ -53,15 +57,15 @@ button:focus {
 }
 
 a {
-	@apply inline-block;
+	@apply inline-block text-gray-900 dark:text-white;
 }
 
 a:hover {
-	@apply bg-blue-500 text-gray-900;
+	@apply bg-blue-500;
 }
 
 header a.active {
-	@apply bg-blue-500;
+	@apply bg-blue-500 text-white;
 }
 
 @tailwind utilities;

@@ -2,6 +2,7 @@ import Achievements from '@pages/Achievements'
 import Contacts from '@pages/Contacts'
 // import Algorithms from '@pages/Algorithms'
 import Exampes from '@pages/examples/Exampes'
+import StockTerminal from '@pages/examples/StockTerminal'
 import Home from '@pages/Home'
 import Mobx from '@pages/Mobx'
 import Redux from '@pages/Redux'
@@ -26,6 +27,11 @@ export const routes = [
 		path: '/exampes',
 		component: Exampes,
 		label: 'Exampes',
+	},
+	{
+		path: '/exampes/stock-terminal',
+		component: StockTerminal,
+		label: 'StockTerminal',
 	},
 	{
 		path: '/mobx',

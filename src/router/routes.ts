@@ -1,7 +1,7 @@
 import Achievements from '@pages/Achievements'
 import Contacts from '@pages/Contacts'
 // import Algorithms from '@pages/Algorithms'
-import Common from '@pages/examples/Common'
+import Exampes from '@pages/examples/Exampes'
 import Home from '@pages/Home'
 import Mobx from '@pages/Mobx'
 import Redux from '@pages/Redux'
@@ -23,9 +23,9 @@ export const routes = [
 		label: 'Algorithms',
 	}, */
 	{
-		path: '/common',
-		component: Common,
-		label: 'Common',
+		path: '/exampes',
+		component: Exampes,
+		label: 'Exampes',
 	},
 	{
 		path: '/mobx',

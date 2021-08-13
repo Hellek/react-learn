@@ -29,6 +29,14 @@ code {
 	@apply bg-green-code-light text-green-code;
 }
 
+label {
+	position: relative;
+}
+
+label .label {
+	@apply absolute -top-4 left-1 text-xs px-1.5 rounded-lg;
+}
+
 select, input, textarea, button {
 	@apply border border-blue-400;
 }
@@ -37,7 +45,7 @@ select, input, textarea, button, code {
 	@apply rounded-md px-2 py-1;
 }
 
-select, input, textarea {
+select, input, textarea, label .label {
 	@apply bg-gray-100 dark:bg-gray-800;
 }
 
